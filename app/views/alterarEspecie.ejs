@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Comercio</title>
+    <link rel="stylesheet" href="/css/fontawesome-all.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+</head>
+
+<body style="overflow: hidden;">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Mercadão da Jaque</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/listaProduto">Listar Produto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/novoProduto">Novo Produto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/listaEspecie">Listar Especie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/novaEspecie">Nova Especie</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<div class="container-fluid formulario">
+    <h3>Novo espido</h3>
+    <form action="/especie/alterar/" method="post">
+        <div class="form-group row">
+            <div class="col-md-1">      
+                <label for="esp_codigo">Codigo</label>
+                <input type="text" class="form-control" id="esp_codigo" minlength="10" name="esp_codigo" value="<%= especie[0].esp_codigo%>" placeholder="Codigo Especie" readonly>
+            </div>
+            <div class="col-md-4">      
+                <label for="esp_descricao">Descrição</label>
+                <input type="text" class="form-control" id="esp_descricao" minlength="10" name="esp_descricao" value="<%= especie[0].esp_descricao%>" placeholder="Descrição Especie">
+            </div>
+            <div class="col-md-1">      
+                <label for="esp_validade">Data de Validade</label>
+                <input type="text" class="form-control" id="esp_validade" name="esp_validade" value="<%= especie[0].esp_validade%>" placeholder="Data de Validade">
+            </div>
+            <div class="col-md-1">      
+                <label for="esp_orientacao">Orientacao</label>
+                <input type="text" class="form-control" id="esp_orientacao" name="esp_orientacao" value="<%= especie[0].esp_orientacao%>" placeholder="Orientação">
+            </div>
+        </div>
+        <div class="form-group row" style="margin-right: 7.5%;">
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary btn-block">Salvar Especie </button>
+                <a class="btn btn-secondary btn-block"  href="/listaEspecie">Voltar</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="/js/bootstrap.js"></script>
+</body>
+</html>
